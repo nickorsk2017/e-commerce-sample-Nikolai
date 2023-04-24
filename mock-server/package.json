@@ -2,9 +2,9 @@
   "name": "mock-server",
   "version": "0.0.2",
   "description": "",
-  "author": "",
+  "author": "Stepanov Nikolai",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

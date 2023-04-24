@@ -1,8 +1,7 @@
 "use client"
 import {useState} from "react";
 import {useStore} from "@/utils";
-import {toast} from 'react-toastify';
-import {ToastContainer} from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import Picture from "./_components/Picture/Picture";
 import ButtonSize, {Props as ButtonProps} from "@/ui/ButtonSize/ButtonSize";
 import Button from "@/ui/Button/Button";
