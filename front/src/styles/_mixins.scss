@@ -1,11 +1,5 @@
 @import "variables";
 
-@mixin tablet {
-  @media (min-width: $TABLET) { @content; }
-}
-@mixin laptop {
-  @media (min-width: $LAPTOP) { @content; }
-}
 @mixin desktop {
-  @media (min-width: $DESKTOP) { @content; }
+  @media (min-width: $MOBILE) { @content; }
 }

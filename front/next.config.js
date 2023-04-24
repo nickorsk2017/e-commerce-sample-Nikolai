@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   experimental: {
     appDir: true,
   },
@@ -11,6 +12,12 @@ const nextConfig = {
       },
     ],
   },
+  publicRuntimeConfig: {
+    API_ROUTE: process.env.API
+  },
+  env: {
+    API_ROUTE: process.env.API,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -20,5 +27,6 @@ const nextConfig = {
     return config
   },
 }
+
 
 module.exports = nextConfig

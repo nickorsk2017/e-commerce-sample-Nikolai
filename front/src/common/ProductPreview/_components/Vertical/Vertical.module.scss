@@ -1,8 +1,8 @@
 @use "src/styles/mixins" as *;
 
 .vertical {
-    flex: 0 0 21%;
-    max-width: 21%;
+    flex: 0 0 45%;
+    max-width: 45%;
     position: relative;
     margin-bottom: 70px;
     text-decoration: unset;
@@ -41,5 +41,10 @@
             color: $GRAY2;
             margin-right: 4px;
         }
+    }
+
+    @include desktop {
+        flex: 0 0 21%;
+        max-width: 21%;
     }
 }

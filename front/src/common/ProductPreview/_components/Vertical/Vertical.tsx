@@ -22,8 +22,10 @@ const Vertical: React.FC<Props> = ({isEmpty, product}) => {
       {product!.sizes.join(", ")}
     </div>
     <div className={styles.vertical_price}>
-      <i className={styles.vertical_price_discont}>$90</i>
-      <span className={styles.vertical_price_value}>$80</span>
+      <i className={[product!.specialInCents ? styles.vertical_price_discont : "", styles.vertical_price_value].join(" ")}>
+        {product!.price}
+      </i>
+      {product!.specialInCents && <span className={styles.vertical_price_value}>{product!.special}</span>}
     </div>
   </Link>
 } 

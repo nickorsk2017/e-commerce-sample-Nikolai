@@ -1,6 +1,8 @@
 "use client"
 import {useState} from "react";
 import {useStore} from "@/utils";
+import {toast} from 'react-toastify';
+import {ToastContainer} from 'react-toastify';
 import Picture from "./_components/Picture/Picture";
 import ButtonSize, {Props as ButtonProps} from "@/ui/ButtonSize/ButtonSize";
 import Button from "@/ui/Button/Button";
@@ -36,6 +38,7 @@ const DetailPage: React.FC<Props> = ({product}) => {
     if(!selectedSize){
       setError("Please select your size");
     } else {
+      toast(`Product ${product.name} has been added to your cart!`, {theme: "dark"});
       cartStore.add({
         id: Math.round((1 - Math.random()) * 100000), 
         product,
@@ -52,8 +55,8 @@ const DetailPage: React.FC<Props> = ({product}) => {
       <h1 className={styles.detail_name}>{product.name}</h1>
       <h2 className={styles.detail_designed}>Designed in Los Angeles</h2>
       <div className={styles.detail_price}>
-        <span className={styles.detail_price_value}>{product.price}</span>
-        <span className={styles.detail_special_price}>{product.special}</span>
+        <span className={[product.specialInCents ? styles.detail_price_discont: "", styles.detail_price_value].join(" ")}>{product.price}</span>
+        {product.specialInCents && <span className={styles.detail_special_price}>{product.special}</span>}
       </div>
       <div className={styles.detail_label}>
         Size:
@@ -69,7 +72,7 @@ const DetailPage: React.FC<Props> = ({product}) => {
         Product Details
       </Collapse>
     </div>
-    
+    <ToastContainer autoClose={500} hideProgressBar position="bottom-right"/>
   </div>
 } 
 

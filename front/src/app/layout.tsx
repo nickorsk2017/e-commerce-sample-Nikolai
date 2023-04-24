@@ -2,6 +2,7 @@ import Header from "@/common/Header/Header";
 import Provider from "@/store/Provider";
 import styles from './layout.module.scss';
 import './globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: 'Created by Stepanov Nikolai',

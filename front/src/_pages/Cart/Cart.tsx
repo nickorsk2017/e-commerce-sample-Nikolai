@@ -4,7 +4,7 @@ import {useState} from "react";
 import {useStore} from '@/utils';
 import Button from "@/ui/Button/Button";
 import {observer} from "mobx-react";
-import productAPI from "@/api/product";
+import cartAPI from "@/api/cart";
 import styles from "./Cart.module.scss";
 
 export type Props = {};
@@ -14,7 +14,7 @@ const CartPage: React.FC<Props> = () => {
   const [orderId, setOrderId] = useState(null);
 
   const checkout = async () => {
-    const result = await productAPI.product.checkout(cartStore.cartItems);
+    const result = await cartAPI.cart.checkout(cartStore.cartItems);
     if(result.orderId){
       setOrderId(result.orderId);
       cartStore.clear();

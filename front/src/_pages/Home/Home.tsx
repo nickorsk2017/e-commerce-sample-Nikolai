@@ -32,11 +32,11 @@ const HomePage: React.FC<Props> = ({products, pagination}) => {
   return <div className={styles.home}>
     <h1 className={styles.home_header}>New In</h1>
     <List page={pagination.page} products={products}/>
-    <Pagination
+    {pathname && <Pagination
       numberPages={numberPages}
       pathname={pathname}
       pagination={pagination}
-    />
+    />}
   </div>
 } 
 

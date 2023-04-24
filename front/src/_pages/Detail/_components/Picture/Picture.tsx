@@ -23,8 +23,6 @@ const Picture: React.FC<Props> = ({alt, src}) => {
         height={760}
         src={src}
         alt={alt}
-        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA...'
-        placeholder="blur"
       />
     </picture>
 } 

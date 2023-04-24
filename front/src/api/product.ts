@@ -1,3 +1,4 @@
+import {decodeHTML} from "@/utils";
 type RequestProducts = {
     page?: number
 }
@@ -21,27 +22,18 @@ const api = {
             const data = await response.json();
             return data;
         },
-        get: async ({productId} : {productId: string}): Promise<Entity.Product> => {
+        getMeta: async ({productId} : {productId: string}) => {
             let url = `http://localhost:3000/product/${productId}`;
             const response = await fetch(url);
             const data = await response.json();
-            return data;
+            return {
+                title: data.name,
+                description: decodeHTML(data.description, true)
+            };
         },
-        checkout: async (cartItems: Entity.CartItems) => {
-            let url = `http://localhost:3000/checkout/placeOrder`;
-            const products = cartItems.map((item) => {
-                return {
-                    id: item.id,
-                    size: item.size
-                }
-            });
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({products})
-            });
+        get: async ({productId} : {productId: string}): Promise<Entity.Product> => {
+            let url = `http://localhost:3000/product/${productId}`;
+            const response = await fetch(url, { cache: 'no-cache' });
             const data = await response.json();
             return data;
         }

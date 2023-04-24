@@ -3,15 +3,14 @@
 .detail {
     padding-bottom: 119px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
 
     &_left {
-        width: 461px;
+        width: 100%;
     }
 
     &_right {
-        padding-left: 47px;
+        width: 100%;
     }
 
     &_name {
@@ -19,7 +18,7 @@
         font-size: 24px;
         font-weight: 300;
         color: $BLACK;
-        margin: 0;
+        margin-top: 20px;
     }
 
     &_designed {
@@ -29,9 +28,11 @@
         color: $BLACK;
     }
 
-    &_price_value {
+    &_price_discont {
         text-decoration: line-through;
     }
+
+    &_price_value {}
 
     &_special_price {
         color: $RED;
@@ -51,11 +52,11 @@
     }
 
     &_add_to_cart {
-        width: 368.64px;
+        width: 100%;
     }
 
     &_description {
-        width: 600px;
+        width: 100%;
     }
 
     &_error {
@@ -63,5 +64,30 @@
         margin-top: 16px;
         font-size: 13px;
         font-weight: 400;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: flex-start;
+
+        &_left {
+            width: 461px;
+        }
+
+        &_right {
+            padding-left: 47px;
+        }
+
+        &_name {
+            margin: 0;   
+        }
+
+        &_add_to_cart {
+            width: 368.64px;
+        }
+
+        &_description {
+            width: 600px;
+        }
     }
 }
