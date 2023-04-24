@@ -1,23 +1,23 @@
 "use client";
 import {createContext, PropsWithChildren} from "react";
-import UserDataStore from "@/store/UserDataStore";
+import CartStore from "@/store/CartStore";
 
 export const MobxContext = createContext<any>(null);
 
 export type Props = PropsWithChildren<{
-  userData?: Entity.UserData
+  cartItems: Entity.CartItems
 }>;
 
 type Store = {
-  userStore?: UserDataStore | null;
+  cartStore?: CartStore | null;
 }
 
 let mainStore: Store = {
-  userStore: null,
+  cartStore: null,
 }
 
-const Provider: React.FC<Props> = ({userData, children}) => {
-  //mainStore.userStore = new UserDataStore(userData);
+const Provider: React.FC<Props> = ({cartItems, children}) => {
+  mainStore.cartStore = new CartStore(cartItems);
   return (
     <MobxContext.Provider value={mainStore}>
       {children}

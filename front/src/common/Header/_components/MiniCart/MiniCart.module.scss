@@ -3,9 +3,26 @@
 .miniCart {
     width: 24px;
     height: 24px;
+    position: relative;
 
     &_icon {
         width: inherit;
         height: inherit;
+    }
+
+    &_badge {
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        background-color: $RED;
+        color: $WHITE;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 9px;
+        font-family: "Avenir Black";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }

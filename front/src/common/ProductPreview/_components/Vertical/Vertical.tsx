@@ -1,3 +1,4 @@
+"use client"
 import Picture from "./_components/Picture/Picture";
 import Link from "@/ui/Link/Link";
 import styles from "./Vertical.module.scss";

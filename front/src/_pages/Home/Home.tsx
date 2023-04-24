@@ -1,5 +1,7 @@
 "use client"
-import {usePathname} from 'next/navigation';
+import {useEffect} from "react";
+import {useSearchParams} from 'next/navigation'
+import {usePathname, useRouter} from 'next/navigation';
 import List from "./_components/List/List";
 import {NUMBER_PAGES} from "@/variables";
 import Pagination from "@/common/Pagination/Pagination";
@@ -12,7 +14,16 @@ export type Props = {
 
 const HomePage: React.FC<Props> = ({products, pagination}) => {
   const pathname = usePathname();
+  const sarchParams = useSearchParams();
   let numberPages = NUMBER_PAGES;
+
+  // smooth scroll when paginated
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [sarchParams]);
 
   if(pagination.pageCount < numberPages){
     numberPages = pagination.pageCount;
@@ -20,7 +31,7 @@ const HomePage: React.FC<Props> = ({products, pagination}) => {
 
   return <div className={styles.home}>
     <h1 className={styles.home_header}>New In</h1>
-    <List products={products}/>
+    <List page={pagination.page} products={products}/>
     <Pagination
       numberPages={numberPages}
       pathname={pathname}

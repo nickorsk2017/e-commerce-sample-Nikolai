@@ -17,7 +17,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider>
+        <Provider cartItems={[]}>
           <div className={styles.layout}>
             <div className={styles.layout_wrapper}>
               <Header/>

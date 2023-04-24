@@ -3,12 +3,14 @@ import React from "react";
 import {PropsWithChildren, HTMLAttributes} from "react";
 import styles from "./Button.module.scss";
 
-export type Props = PropsWithChildren<HTMLAttributes<HTMLButtonElement>>;
+export type Props = PropsWithChildren<HTMLAttributes<HTMLButtonElement> & {
+  className?: string;
+}>;
 
-const Button: React.FC<Props> = ({children, ...props}) => {
+const Button: React.FC<Props> = ({children, className, ...props}) => {
   return (
       <button
-        className={styles.button}
+        className={[styles.button, className].join(" ")}
         {...props}
       >
        {children}

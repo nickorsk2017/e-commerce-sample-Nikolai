@@ -4,9 +4,10 @@ import styles from "./List.module.scss";
 
 export type Props = {
   products: Array<Entity.Product>;
+  page: number;
 };
 
-const List: React.FC<Props> = ({products}) => {
+const List: React.FC<Props> = ({products, page}) => {
 
   const productsJSX = products.map((product: Entity.Product) => {
     return <ProductPreview key={product.id} type={PRODUCT_PREVIEW_TYPES.VERTICAL} product={product}/>

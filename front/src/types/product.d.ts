@@ -1,4 +1,6 @@
 declare namespace Entity {
+    type ProductSizes = "Small" | "Medium" | "Large";
+
     type Product = {
         id: Entity.ID;
         model: string;
@@ -9,7 +11,7 @@ declare namespace Entity {
         priceInCents: number;
         specialInCents: number;
         description: string;
-        sizes: string[];
+        sizes: Array<ProductSizes>;
     };
 
     type ProductPagination = {

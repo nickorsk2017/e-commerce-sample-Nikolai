@@ -1,16 +1,21 @@
 @use "src/styles/mixins" as *;
 
 .button {
+    background-color: $BLACK;
     border: unset;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
+    border-radius: 4px;
+    font-size: 20px;
     color: $WHITE;
-    height: 48px;
+    height: 44px;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0 20px;
+    justify-content: center;
+    transition: all .2s ease-in-out;
     cursor: pointer;
+
+    &:hover {
+        background-color: $RED;
+        color: $WHITE;
+    }
 }

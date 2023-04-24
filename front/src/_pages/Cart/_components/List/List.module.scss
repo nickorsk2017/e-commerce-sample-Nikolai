@@ -1,0 +1,6 @@
+@use "src/styles/mixins" as *;
+
+.items_list {
+  display: flex;
+  flex-direction: column;
+}

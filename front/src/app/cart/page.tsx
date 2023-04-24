@@ -1,7 +1,5 @@
+import CartPage from "@/_pages/Cart/Cart";
+
 export default function OrderBoard() {
-  return (
-    <div>
-      Доска заказов
-    </div> 
-  )
+  return <CartPage/>
 }

@@ -1,5 +1,42 @@
 @use "src/styles/mixins" as *;
 
 .horizontal {
-  
+  display: inline-flex;
+  flex-direction: row;
+  margin-bottom: 48px;
+  position: relative;
+    
+  &_left {
+    width: 109px;
+    margin-right: 24px;
+  }
+
+  &_right {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &_details {
+    width: 370px;
+  }
+
+  &_size {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 14px;
+  }
+
+  &_coast {
+    color: $GRAY2;
+    font-family: "Avenir Roman";
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  &_trash {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+  }
 }
