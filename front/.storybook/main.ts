@@ -1,5 +1,11 @@
 // @ts-ignore
 const path = require('path');
+// @ts-ignore
+const variables = require.resolve("../src/variables");
+// @ts-ignore
+const utils = require.resolve("../src/utils");
+// @ts-ignore
+const provider = require.resolve("../src/utils");
 
 module.exports = {
   core: {
@@ -100,7 +106,7 @@ module.exports = {
               modules: {
                 auto: true,
                 localIdentName: '[name]__[local]--[hash:base64:5]',
-                exportLocalsConvention: 'camelCaseOnly'
+                exportLocalsConvention: 'asIs'
               },
             },
           },
@@ -112,6 +118,10 @@ module.exports = {
     return config;
   },
   webpackFinal: config => {
+    config.resolve.alias['@/variables'] = variables; 
+    config.resolve.alias['@/utils'] = utils; 
+    config.resolve.alias['@/store/Provider'] = provider; 
+    
     config.module.rules = config.module.rules.map(r => {
       const isWebpackAssetRule = String(r.test) === String(/\.(svg|ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/);
       return  isWebpackAssetRule ? {
