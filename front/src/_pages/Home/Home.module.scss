@@ -1,0 +1,12 @@
+@use "src/styles/mixins" as *;
+
+.home {
+    padding-bottom: 119px;
+
+    &_header {
+        font-size: 30px;
+        height: 41px;
+        border-bottom: 1px solid $GRAY;
+        margin: 0;
+    }
+}

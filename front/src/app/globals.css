@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url('/fonts/Avenir/Avenir Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Avenir Book';
+  src: url('/fonts/Avenir/Avenir Book.otf');
+}
+
+@font-face {
+  font-family: 'Avenir Roman';
+  src: url('/fonts/Avenir/Avenir Roman.otf');
+}
+
+body, html {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: 'Avenir Roman';
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

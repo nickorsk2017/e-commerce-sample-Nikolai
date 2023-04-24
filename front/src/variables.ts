@@ -1,0 +1,1 @@
+export const NUMBER_PAGES = 4;

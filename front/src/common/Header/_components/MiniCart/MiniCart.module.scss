@@ -1,0 +1,11 @@
+@use "src/styles/mixins" as *;
+
+.miniCart {
+    width: 24px;
+    height: 24px;
+
+    &_icon {
+        width: inherit;
+        height: inherit;
+    }
+}

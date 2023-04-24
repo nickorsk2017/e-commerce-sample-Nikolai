@@ -1,0 +1,22 @@
+@use "src/styles/mixins" as *;
+
+.picture {
+   width: 100%;
+   height: 487px;
+   display: flex;
+   position: relative;
+   
+
+   &_img {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    object-fit: cover;
+    object-position: center top;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+   }
+}

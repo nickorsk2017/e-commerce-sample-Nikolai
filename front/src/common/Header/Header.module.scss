@@ -1,0 +1,30 @@
+@use "src/styles/mixins" as *;
+
+.header {
+    height: 63px;
+    width: 100%;
+    background-color: $BLACK;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $HEADER_INDEX;
+
+    &_left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    } 
+
+    &_right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
