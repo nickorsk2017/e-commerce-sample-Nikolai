@@ -22,7 +22,7 @@ node v18.12.1
 
 yarn 1.22.19
 
-## Instaling
+## Install
 
 ```bash
 cd ./front
@@ -34,7 +34,7 @@ cd ./mock-server
 yarn install
 ```
 
-## Running
+## Run
 
 1. Run mock server
 
